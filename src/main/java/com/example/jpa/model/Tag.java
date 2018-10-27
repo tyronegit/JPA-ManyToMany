@@ -37,10 +37,21 @@ public class Tag implements Serializable {
 			cascade = {CascadeType.PERSIST, CascadeType.MERGE}, mappedBy = "tags")
 	private Set<Post> posts = new HashSet<>();	
 	
-	public Tag(@NotNull @Size(max = 100) String name){
+	
+	public Tag() {
 		super();
-		this.name =name;
 	}
+
+	
+	
+	public Tag(Long id,String name, Set<Post> posts) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.posts = posts;
+	}
+
+
 
 	public Long getId() {
 		return id;
@@ -65,6 +76,24 @@ public class Tag implements Serializable {
 	public void setPosts(Set<Post> posts) {
 		this.posts = posts;
 	}
+
+
+
+	public String getText() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	public void setText(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	
 	
 	
 

@@ -116,9 +116,25 @@ public class Post implements Serializable{
 		return tags;
 	}
 
-	public void setTags(Set<Tag> tags) {
-		this.tags = tags;
+	public void setTags(Tag tag) {
+		this.tags = (Set<Tag>) tag;
 	}
+
+	public Post() {
+		super();
+	}
+
+	public Post(Long id, String title, String description,
+			 String content, Date postAt,  Date lastUpdatedAt) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.content = content;
+		this.postAt = postAt;
+		this.lastUpdatedAt = lastUpdatedAt;
+	}
+	
 	
 		
 
